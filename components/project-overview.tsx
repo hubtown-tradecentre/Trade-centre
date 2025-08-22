@@ -25,16 +25,20 @@ export default function ProjectOverview() {
   }, []);
 
   return (
-    <section id="overview" ref={sectionRef} className="py-20 bg-gray-50">
+    <section
+      id="overview"
+      ref={sectionRef}
+      className="py-16 md:py-20 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-sans">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-gray-900 mb-4 font-sans">
             Project Overview
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
           {/* Image */}
           <div
             className={`transform transition-all duration-1000 ${
@@ -43,7 +47,7 @@ export default function ProjectOverview() {
                 : "-translate-x-full opacity-0"
             }`}
           >
-            <div className="relative h-96 lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-72 md:h-80 lg:h-[480px] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/aboutus-2.webp"
                 alt="Hubtown Trade Centre Building"
@@ -62,13 +66,13 @@ export default function ProjectOverview() {
                 : "translate-x-full opacity-0"
             }`}
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 font-sans">
+            <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-gray-900 mb-6 md:mb-8 font-sans">
               <span>The Power of Location</span>
               <br />
               <span>The Promise of Growth</span>
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-5 md:space-y-6">
               {[
                 {
                   title: "Where Business Meets Opportunity",
@@ -95,10 +99,13 @@ export default function ProjectOverview() {
                   desc: "Next-generation facilities that keep your business ahead of the curve.",
                 },
               ].map((item, idx) => (
-                <div className="flex items-start space-x-4" key={idx}>
-                  <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-lg text-gray-700 font-sans">
-                    <span className="font-bold">{item.title}</span> –{" "}
+                <div
+                  className="flex items-start space-x-3 md:space-x-4"
+                  key={idx}
+                >
+                  <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-base md:text-lg lg:text-[1rem] text-gray-700 font-sans leading-relaxed">
+                    <span className="font-semibold">{item.title}</span> –{" "}
                     {item.desc}
                   </p>
                 </div>

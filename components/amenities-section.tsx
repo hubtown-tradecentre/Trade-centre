@@ -26,14 +26,12 @@ export default function AmenitiesSection() {
           );
 
           if (entry.isIntersecting) {
-            // Show when coming into view
             setVisibleItems((prev) => {
               const newSet = new Set(prev);
               newSet.add(index);
-              return Array.from(newSet); // Convert back to array
+              return Array.from(newSet);
             });
           } else if (entry.boundingClientRect.top > 0) {
-            // Reset when scrolled away upward
             setVisibleItems((prev) => prev.filter((i) => i !== index));
           }
         });
@@ -52,19 +50,13 @@ export default function AmenitiesSection() {
       id="amenities"
       className="py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden"
     >
-      {/* Background Circles Removed */}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-sans">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4 font-sans">
             FACILITIES
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          {/* <p className="text-lg text-gray-600 font-sans max-w-2xl mx-auto">
-            Experience world-class amenities designed for modern business and
-            lifestyle needs
-          </p> */}
+          <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
         </div>
 
         {/* Grid */}
@@ -73,29 +65,32 @@ export default function AmenitiesSection() {
             <div
               key={index}
               data-index={index}
-              className={`amenity-card group relative overflow-hidden rounded-2xl border border-gray-200 bg-white transform-gpu transition-all duration-1000 ease-out hover:scale-[1.02] hover:shadow-lg hover:shadow-black/5 ${
-                visibleItems.includes(index)
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-6"
-              }`}
+              className={`amenity-card group relative overflow-hidden rounded-2xl 
+                border border-gray-300 bg-white transform-gpu transition-all duration-1000 ease-out 
+                hover:scale-[1.02] hover:shadow-lg hover:shadow-black/5
+                ${
+                  visibleItems.includes(index)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }`}
               style={{ transitionDelay: `${index * 120}ms` }}
             >
               {/* Icon */}
-              <div className="flex justify-center items-center p-10">
-                <div className="w-20 h-20 relative">
+              <div className="flex justify-center items-center p-6 md:p-8">
+                <div className="w-16 h-16 md:w-14 md:h-14 relative">
                   <Image
                     src={`/images/${amenity.icon}`}
                     alt={amenity.title}
                     fill
                     className="object-contain"
-                    sizes="80px"
+                    sizes="64px"
                   />
                 </div>
               </div>
 
               {/* Title */}
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-medium text-gray-900 leading-tight group-hover:text-black transition-colors duration-300">
+              <div className="px-4 pb-6 text-center">
+                <h3 className="text-base md:text-sm font-medium text-gray-900 leading-tight group-hover:text-black transition-colors duration-300">
                   {amenity.title}
                 </h3>
               </div>

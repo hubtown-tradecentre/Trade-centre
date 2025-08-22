@@ -49,7 +49,7 @@ export default function LuxurySection() {
 
       {/* Foreground content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
           <div
             className={`transform transition-all duration-1000 ${
@@ -58,7 +58,7 @@ export default function LuxurySection() {
                 : "-translate-x-full opacity-0"
             }`}
           >
-            <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative h-80 md:h-96 lg:h-[420px] rounded-lg overflow-hidden shadow-2xl">
               <Image
                 src="/images/hero banner image.webp"
                 alt="Luxury Commercial Complex Interior"
@@ -77,14 +77,14 @@ export default function LuxurySection() {
                 : "translate-x-full opacity-0"
             }`}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-sans">
+            <h2 className="text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-white mb-6 font-sans leading-snug">
               A New Era of Connectivity & Convenience
             </h2>
 
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
+            <div className="space-y-5">
+              <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-lg text-white font-sans">
+                <p className="text-base md:text-lg lg:text-[1rem] text-white font-sans">
                   Hubtown Limited, one of India’s leading real estate
                   developers, in collaboration with the Gujarat State Government
                   and GSRTC, is transforming traditional bus depots into
@@ -92,26 +92,26 @@ export default function LuxurySection() {
                 </p>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-lg text-white font-sans">
+                <p className="text-base md:text-lg lg:text-[1rem] text-white font-sans">
                   <span className="font-bold">An Integrated Lifestyle Hub</span>{" "}
                   <br />
                   More than just a transit point, this development offers a
-                  vibrant mix of retail outlets and business spaces everything
+                  vibrant mix of retail outlets and business spaces — everything
                   you need, all in one place.
                 </p>
               </div>
 
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3">
                 <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-lg text-white font-sans">
+                <p className="text-base md:text-lg lg:text-[1rem] text-white font-sans">
                   <span className="font-bold">
                     Where Convenience Meets Opportunity
                   </span>{" "}
                   <br />
                   With everything just steps away, this is more than a
-                  commercial hub it’s a thriving destination where life,
+                  commercial hub — it’s a thriving destination where life,
                   business, and leisure seamlessly connect.
                 </p>
               </div>

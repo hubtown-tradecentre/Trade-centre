@@ -37,11 +37,12 @@ export default function LocationSection() {
   return (
     <section id="location" className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-sans">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4 font-sans">
             Location
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto" />
+          <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -58,7 +59,6 @@ export default function LocationSection() {
                 title="Hubtown Trade Centre Location"
                 aria-label="Hubtown Trade Centre Map"
               />
-              {/* Transparent overlay to capture clicks */}
               <div
                 className="absolute inset-0 cursor-pointer"
                 onClick={handleMapClick}
@@ -68,19 +68,21 @@ export default function LocationSection() {
 
           {/* Location Details */}
           <div className="order-2 lg:order-2 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white p-8 rounded-lg h-full flex flex-col justify-center">
-            <h3 className="text-3xl md:text-4xl font-bold mb-8 font-sans">
+            <h3 className="text-3xl md:text-3xl font-bold mb-8 font-sans">
               AROUND HUBTOWN TRADE CENTER
             </h3>
 
             <div className="space-y-4">
               {nearbyLocations.map((location, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <location.Icon className="w-6 h-6 flex-shrink-0" />
+                  <location.Icon className="w-6 h-6 md:w-5 md:h-5 flex-shrink-0" />
                   <div className="flex-1">
-                    <span className="font-semibold font-sans">
+                    <span className="font-semibold font-sans text-base md:text-sm">
                       {location.distance}
                     </span>
-                    <span className="ml-2 font-sans">{location.name}</span>
+                    <span className="ml-2 font-sans text-base md:text-sm">
+                      {location.name}
+                    </span>
                   </div>
                 </div>
               ))}

@@ -21,7 +21,7 @@ export default function Navbar({ onEnquiryClick }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 md:h-24">
+        <div className="flex justify-between items-center h-20 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Image
@@ -29,48 +29,48 @@ export default function Navbar({ onEnquiryClick }: NavbarProps) {
               alt="Hubtown Trade Centre"
               width={200}
               height={80}
-              className="h-[3.5rem] md:h-[4.5rem] w-auto"
+              className="h-[3.5rem] md:h-[3.8rem] w-auto" // ⬅️ slightly smaller on desktop
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("overview")}
-              className="text-gray-700 hover:text-blue-600 font-bold text-xl transition-colors font-sans"
+              className="text-gray-700 hover:text-blue-600 font-bold text-lg transition-colors font-sans" // ⬅️ reduced from text-xl
             >
               Overview
             </button>
             <button
               onClick={() => scrollToSection("amenities")}
-              className="text-gray-700 hover:text-blue-600 font-bold text-xl transition-colors font-sans"
+              className="text-gray-700 hover:text-blue-600 font-bold text-lg transition-colors font-sans"
             >
               Facilities
             </button>
             <button
               onClick={() => scrollToSection("location")}
-              className="text-gray-700 hover:text-blue-600 font-bold text-xl transition-colors font-sans"
+              className="text-gray-700 hover:text-blue-600 font-bold text-lg transition-colors font-sans"
             >
               Location
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-gray-700 hover:text-blue-600 font-bold text-xl transition-colors font-sans"
+              className="text-gray-700 hover:text-blue-600 font-bold text-lg transition-colors font-sans"
             >
               Contact
             </button>
           </div>
 
-          {/* ✅ Bigger Call Button in Navbar */}
+          {/* ✅ Slightly Smaller Call Button in Navbar (desktop only) */}
           <div className="hidden md:flex items-center">
             <a
               href="tel:+918657971339"
-              className="flex items-center gap-3 bg-gradient-to-r from-[#533F2F] via-[#3e2f23] to-[#2a1f17] text-white px-8 py-3 rounded-xl font-bold text-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.05] font-sans"
+              className="flex items-center gap-2 bg-gradient-to-r from-[#533F2F] via-[#3e2f23] to-[#2a1f17] text-white px-6 py-2.5 rounded-lg font-bold text-base transition-all duration-500 hover:shadow-xl hover:scale-[1.05] font-sans"
             >
               {/* Phone Icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-5 w-5" // smaller icon
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
