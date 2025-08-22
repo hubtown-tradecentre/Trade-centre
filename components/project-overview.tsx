@@ -28,17 +28,19 @@ export default function ProjectOverview() {
     <section
       id="overview"
       ref={sectionRef}
-      className="py-16 md:py-20 bg-gray-50"
+      className="py-8 md:pt-44 md:pb-20 bg-gray-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-gray-900 mb-4 font-sans">
-            Project Overview
-          </h2>
-          <div className="w-20 md:w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
+          {/* Mobile Heading */}
+          <div className="block lg:hidden text-center mb-6">
+            <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-gray-900 font-sans">
+              <span>The Power of Location</span>
+              <br />
+              <span>The Promise of Growth</span>
+            </h3>
+          </div>
+
           {/* Image */}
           <div
             className={`transform transition-all duration-1000 ${
@@ -66,7 +68,8 @@ export default function ProjectOverview() {
                 : "translate-x-full opacity-0"
             }`}
           >
-            <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-gray-900 mb-6 md:mb-8 font-sans">
+            {/* Desktop Heading */}
+            <h3 className="hidden lg:block text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-gray-900 mb-6 md:mb-8 font-sans">
               <span>The Power of Location</span>
               <br />
               <span>The Promise of Growth</span>
