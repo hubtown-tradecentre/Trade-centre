@@ -17,7 +17,7 @@ const WhatsappButton = () => {
       target="_blank"
       className="fixed z-50 bottom-5 right-4 md:bottom-8 md:right-8"
     >
-      <div className="flex items-center justify-center rounded-full w-16 h-16 md:w-12 md:h-12 bg-[linear-gradient(180deg,_#60d66a_0%,_#20b038_100%)]">
+      <div className="flex items-center justify-center rounded-full w-12 h-12 md:w-12 md:h-12 bg-[linear-gradient(180deg,_#60d66a_0%,_#20b038_100%)]">
         {/* SVG Icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
