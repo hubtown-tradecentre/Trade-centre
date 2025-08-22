@@ -33,7 +33,7 @@ export default function ProjectOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
           {/* Mobile Heading */}
-          <div className="block lg:hidden text-center mb-6">
+          <div className="block lg:hidden text-center mb-2 md:mb-6">
             <h3 className="text-2xl md:text-3xl lg:text-[1.75rem] font-bold text-gray-900 font-sans">
               <span>The Power of Location</span>
               <br />
