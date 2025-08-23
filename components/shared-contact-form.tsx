@@ -74,7 +74,45 @@ export default function SharedContactForm({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Special handling for phone number - only allow digits
+    if (name === "phone") {
+      // Check if the input contains non-numeric characters
+      if (value && !/^\d*$/.test(value)) {
+        setPhoneError("Please enter only numbers");
+        return; // Don't update the state with invalid input
+      } else {
+        setPhoneError(""); // Clear error if input is valid
+      }
+    }
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Additional handler for keydown to prevent non-numeric keys
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Allow: backspace, delete, tab, escape, enter
+    if (
+      [8, 9, 27, 13, 46].indexOf(e.keyCode) !== -1 ||
+      // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+      (e.keyCode === 65 && e.ctrlKey === true) ||
+      (e.keyCode === 67 && e.ctrlKey === true) ||
+      (e.keyCode === 86 && e.ctrlKey === true) ||
+      (e.keyCode === 88 && e.ctrlKey === true)
+    ) {
+      return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if (
+      (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
+      (e.keyCode < 96 || e.keyCode > 105)
+    ) {
+      e.preventDefault();
+      setPhoneError("Please enter only numbers");
+    } else {
+      setPhoneError(""); // Clear error for valid key
+    }
   };
 
   return (
@@ -126,9 +164,12 @@ export default function SharedContactForm({
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  onKeyDown={handlePhoneKeyDown}
                   placeholder="Phone Number *"
                   required
                   maxLength={10}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   className={`w-full px-0 py-3 bg-transparent border-0 border-b-2 ${
                     phoneError ? "border-red-500" : "border-gray-300"
                   } focus:border-blue-500 outline-none transition-colors duration-300 text-gray-800 placeholder-gray-500 focus:placeholder-transparent`}
