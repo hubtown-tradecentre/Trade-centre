@@ -20,9 +20,9 @@ export default function LocationSection() {
       name: "Shree Simandhar Swami Jain Derasar",
     },
     { Icon: Plane, distance: "1.5 KM", name: "Mehsana Airport" },
-    { Icon: Hospital, distance: "1.3 KM", name: "Mahesana Hospital" },
-    { Icon: Bus, distance: "0 M", name: "Mehsna Bus Port" },
-    { Icon: Train, distance: "2 KM", name: "Mahsana Railway Junction" },
+    { Icon: Hospital, distance: "1.3 KM", name: "Mehsana Hospital" },
+    { Icon: Bus, distance: "0 M", name: "Mehsana Bus Port" },
+    { Icon: Train, distance: "2 KM", name: "Mehsana Railway Junction" },
     { Icon: Factory, distance: "850 M", name: "GIDC Industrial Estate" },
     { Icon: Building2, distance: "2 KM", name: "Dudhsagar Dairy Mehsana" },
   ];
