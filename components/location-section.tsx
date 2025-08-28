@@ -19,13 +19,24 @@ export default function LocationSection() {
       distance: "150 M",
       name: "Shree Simandhar Swami Jain Derasar",
     },
-    { Icon: Plane, distance: "1.5 KM", name: "Mehsana Airport" },
+    { Icon: Plane, distance: "1 KM", name: "Mehsana Airport" },
     { Icon: Hospital, distance: "1.3 KM", name: "Mehsana Hospital" },
     { Icon: Bus, distance: "0 M", name: "Mehsana Bus Port" },
     { Icon: Train, distance: "2 KM", name: "Mehsana Railway Junction" },
     { Icon: Factory, distance: "850 M", name: "GIDC Industrial Estate" },
     { Icon: Building2, distance: "2 KM", name: "Dudhsagar Dairy Mehsana" },
   ];
+
+  // Helper: convert "1.5 KM" / "100 M" into meters
+  const parseDistance = (d: string): number => {
+    const value = parseFloat(d);
+    return d.toLowerCase().includes("km") ? value * 1000 : value;
+  };
+
+  // Sort locations by distance in meters
+  const sortedLocations = [...nearbyLocations].sort(
+    (a, b) => parseDistance(a.distance) - parseDistance(b.distance)
+  );
 
   const handleMapClick = () => {
     window.open(
@@ -73,7 +84,7 @@ export default function LocationSection() {
             </h3>
 
             <div className="space-y-4">
-              {nearbyLocations.map((location, index) => (
+              {sortedLocations.map((location, index) => (
                 <div key={index} className="flex items-center space-x-4">
                   <location.Icon className="w-6 h-6 md:w-5 md:h-5 flex-shrink-0" />
                   <div className="flex-1">
