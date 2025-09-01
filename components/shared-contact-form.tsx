@@ -151,6 +151,7 @@ export default function SharedContactForm({
               <input
                 type="text"
                 name="name"
+                id="name-field"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Full Name *"
@@ -189,6 +190,7 @@ export default function SharedContactForm({
               />
 
               <button
+                id="formSubmitButton"
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
