@@ -7,6 +7,7 @@ interface EnquiryButtonProps {
 export default function EnquiryButton({ onClick }: EnquiryButtonProps) {
   return (
     <button
+      id="formSubmitButton"
       onClick={onClick}
       className="fixed right-0 md:right-3 top-1/2 -translate-y-1/2 z-50 
                  bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 

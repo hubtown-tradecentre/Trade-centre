@@ -14,6 +14,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       <div className="relative bg-white rounded-2xl max-w-sm w-full shadow-2xl animate-fade-in-up">
         {/* Close button */}
         <button
+          id="formSubmitButton"
           onClick={onClose}
           className="absolute -top-2 -right-2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-gray-200"
         >
