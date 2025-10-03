@@ -39,7 +39,7 @@ export default function Home() {
       <Footer />
 
       {/* Floating Enquire Now Button */}
-      <EnquiryButton href="https://hubtown.co.in/projects_enquiry/trade-center/enquiry.html" />
+      <EnquiryButton href="https://hubtown.co.in/projects_enquiry/trade-center/enquiry.html" newTab />
 
       <ContactModal
         isOpen={isModalOpen}

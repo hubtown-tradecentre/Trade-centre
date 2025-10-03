@@ -1,14 +1,17 @@
 "use client";
 
 interface EnquiryButtonProps {
-  onClick: () => void;
+  href: string;
+  newTab?: boolean;
 }
 
-export default function EnquiryButton({ onClick }: EnquiryButtonProps) {
+export default function EnquiryButton({ href, newTab = false }: EnquiryButtonProps) {
   return (
-    <button
+    <a
+      href={href}
+      target={newTab ? "_blank" : "_self"}
+      rel={newTab ? "noopener noreferrer" : undefined}
       id="enquirenowFormSubmit"
-      onClick={onClick}
       className="fixed right-0 md:right-3 top-1/2 -translate-y-1/2 z-50 
                  bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 
                  text-white px-2 py-2 md:px-2.5 md:py-3 
@@ -23,6 +26,6 @@ export default function EnquiryButton({ onClick }: EnquiryButtonProps) {
       }}
     >
       ENQUIRE NOW
-    </button>
+    </a>
   );
 }
