@@ -11,7 +11,6 @@ export default function ContactSection() {
 
         <a
           href="https://hubtown.co.in/projects_enquiry/trade-center/enquiry.html"
-          target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 
                      text-white font-semibold px-6 py-3 rounded-md shadow-lg 
