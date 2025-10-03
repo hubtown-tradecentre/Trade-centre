@@ -16,16 +16,17 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasShownModal, setHasShownModal] = useState(false);
 
-  useEffect(() => {
-    if (!hasShownModal) {
-      const timer = setTimeout(() => {
-        setIsModalOpen(true);
-        setHasShownModal(true);
-      }, 15000); // Show once after 15 seconds
+// ❌ remove auto-open modal
+// useEffect(() => {
+//   if (!hasShownModal) {
+//     const timer = setTimeout(() => {
+//       setIsModalOpen(true);
+//       setHasShownModal(true);
+//     }, 15000); // Show once after 15 seconds
 
-      return () => clearTimeout(timer);
-    }
-  }, [hasShownModal]);
+//     return () => clearTimeout(timer);
+//   }
+// }, [hasShownModal]);
 
   return (
     <main className="min-h-screen">
