@@ -57,6 +57,15 @@ export default function Footer() {
               </div>
 
               <div>
+                <h4 className="font-semibold text-lg mb-2 font-sans">Email:</h4>
+                <a
+                  href="mailto:contact@hubtown.co.in"
+                  className="text-gray-300 hover:text-white font-sans"
+                >
+                  contact@hubtown.co.in
+                </a>
+              </div>
+              <div>
                 <h4 className="font-semibold text-lg mb-2 font-sans">
                   MahaRERA Reg. No.:
                 </h4>
