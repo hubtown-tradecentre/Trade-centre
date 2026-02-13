@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Hubtown Trade Centre - Premium Commercial Spaces in Mehsana",
     description:
       "Premium commercial spaces with modern amenities in the heart of Mehsana, Gujarat",
-    url: "https://www.hubtowntradecentre.com",
+    url: "https://hubtown-trade-centre.com",
     siteName: "Hubtown Trade Centre",
     locale: "en_IN",
     type: "website",
@@ -48,25 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={${inter.variable} antialiased}>
-      <body className="font-sans">
-        {/* Google Tag Manager (noscript - Body) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WHQ6ZWLJ"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-
-        {children}
-
-        {/* Floating Buttons */}
-        <WhatsappButton />
-        <CallButton />
-
-        {/* Google Tag Manager */}
+    <html lang="en" className={`${inter.variable} antialiased`}>
+      <head>
+        {/* Google Tag Manager (Head) */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -80,13 +64,43 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WHQ6ZWLJ');`,
           }}
         />
+      </head>
+      <body className="font-sans">
+        {/* Google Tag Manager (noscript - Body) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WHQ6ZWLJ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+	
+	{/* 1. CHATBOT CONFIG */}
+	<Script
+	  id="jamcrm-config"
+	  strategy="beforeInteractive"
+	  dangerouslySetInnerHTML={{
+	    __html: `
+	      window.JamCRMConfig = {
+		bot: "Trade_center",
+		domain: window.location.origin
+	      };
+	    `,
+	  }}
+	/>
 
-        {/* CHATBOT - Load at the very end */}
-        <Script
-          src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
-          strategy="lazyOnload"
-          defer
-        />
+	{/* 2. CHATBOT SDK */}
+	<Script
+	  src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
+	  strategy="afterInteractive"
+	/>
+
+	{children}
+        {/* Floating Buttons */}
+	
+        <WhatsappButton />
+        <CallButton />
       </body>
     </html>
   );
