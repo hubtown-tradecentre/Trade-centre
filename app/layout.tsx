@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={${inter.variable} antialiased}>
+    <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="font-sans">
         {/* Google Tag Manager (noscript - Body) */}
         <noscript>
@@ -85,7 +85,6 @@ export default function RootLayout({
         <Script
           src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
           strategy="lazyOnload"
-          defer
         />
       </body>
     </html>
