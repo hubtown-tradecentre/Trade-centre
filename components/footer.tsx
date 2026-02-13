@@ -5,26 +5,6 @@ import Image from "next/image";
 
 export default function Footer() {
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js";
-    script.async = true;
-
-    script.onload = () => {
-      console.log("Chatbot SDK Loaded Successfully");
-    };
-
-    script.onerror = (error) => {
-      console.error("Chatbot SDK Failed to Load", error);
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

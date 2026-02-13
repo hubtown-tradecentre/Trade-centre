@@ -79,6 +79,11 @@ export default function RootLayout({
         {children}
 
         {/* Floating Buttons */}
+	<Script
+          src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
+          strategy="afterInteractive"
+          defer
+        />
         <WhatsappButton />
         <CallButton />
       </body>
