@@ -75,15 +75,14 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-
-        {children}
-
-        {/* Floating Buttons */}
 	<Script
           src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
           strategy="afterInteractive"
           defer
         />
+        {children}
+        {/* Floating Buttons */}
+	
         <WhatsappButton />
         <CallButton />
       </body>
