@@ -76,14 +76,20 @@ export default function RootLayout({
           ></iframe>
         </noscript>
 	
-	{/* 1. CONFIG */}
-	<Script id="jamcrm-config" strategy="beforeInteractive" dangerouslySetInnerHTML={{
-	    __html: window.JamCRMConfig = { bot: 'Trade_center', domain: window.location.origin };
-	}}/>
-  
-	{/* 2. SDK */}
-	<Script src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js" strategy="afterInteractive"/>
-
+	{/* 1. CHATBOT CONFIG - FIXED SYNTAX */}
+	  <Script
+	    id="jamcrm-config"
+	    strategy="beforeInteractive"
+	    dangerouslySetInnerHTML={{
+	      __html: window.JamCRMConfig={bot:"Trade_center",domain:window.location.origin};
+	    }}
+	  />
+	  
+	  {/* 2. CHATBOT SDK */}
+	  <Script
+	    src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
+	    strategy="afterInteractive"
+	  />
 	{children}
         {/* Floating Buttons */}
 	
