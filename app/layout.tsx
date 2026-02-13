@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import WhatsappButton from "../components/WhatsappButton";
 import CallButton from "../components/CallButton";
+import ChatbotLoader from "../components/ChatbotLoader";
 import Script from "next/script";
 
 const inter = Inter({
@@ -50,7 +51,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="font-sans">
-        {/* Google Tag Manager (noscript - Body) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WHQ6ZWLJ"
@@ -62,11 +62,10 @@ export default function RootLayout({
 
         {children}
 
-        {/* Floating Buttons */}
         <WhatsappButton />
         <CallButton />
+        <ChatbotLoader />
 
-        {/* Google Tag Manager */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -79,12 +78,6 @@ export default function RootLayout({
               f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WHQ6ZWLJ');`,
           }}
-        />
-
-        {/* CHATBOT - Load at the very end */}
-        <Script
-          src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
-          strategy="lazyOnload"
         />
       </body>
     </html>
