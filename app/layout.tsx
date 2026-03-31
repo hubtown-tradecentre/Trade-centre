@@ -81,7 +81,7 @@ export default function RootLayout({
 
         {/* Chatbot SDK - As provided by JamOutsourcing */}
         <Script
-          src="https://cc2.jamoutsourcing.com/jamcrmv2/public/ChatbotSDK/Trade_center_chatbot.js"
+          src="https://jamcrmv2.jamoutsourcing.com/public/ChatbotSDK/Trade_center_chatbot.js"
           strategy="afterInteractive"
         />
       </body>
